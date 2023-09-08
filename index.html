@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hidratación Basal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Hidratación Basal</h1>
+        <form id="calcForm">
+            <label for="peso">Peso del paciente (kg):</label>
+            <input type="number" id="peso" step="0.01" required>
+            <button type="button" onclick="calcularHidratacion()">Calcular</button>
+        </form>
+
+        <div class="results">
+            <h2>Resultados:</h2>
+            <p><strong>Volumen Diario:</strong> <span id="resultadoVolumenDiario"></span> cc</p>
+            <p><strong>Mantenimiento:</strong> <span id="resultadoMantenimiento"></span> cc/hr</p>
+            <p><strong>m+m/2:</strong> <span id="resultadoMMasM2"></span> cc/hr</p>
+        </div>
+    </div>
+    <div class="info-container">
+
+        <h2>El Cálculo</h2>
+
+        <p>Se manejan dos formas de calcular la hidratación de mantenimiento:</p>
+        <ul>
+            <li>Cuando el niño tiene hasta 30kg: Se utiliza el calculo de Holliday-Segar.</li>
+            <li>Cuando el niño tiene mas de 30kg: Se calcula la hidratación basal usando el método de superficie corporal.</li>
+        </ul>
+
+        <h3>Método Holliday-Segar</h3>
+
+        <ul>
+            <li>Cuando el niño tiene hasta 10kg: 100cc por cada kilo.</li>
+            <li>Luego, por cada kilo arriba de 10 y hasta 20kg, se suman 50cc.</li>
+            <li>Finalmente, por cada kilo arriba de 20kg se suman 20cc.</li>
+        </ul>
+
+        <h3>Método de superficie corporal</h3>
+
+        <p>Superficie corporal = ( (peso * 4) + 7) / (peso + 90)</p>
+        <p>Este resultado se multiplica por 1500 o por 2000 para hallar el valor del volumen diario en cc, y el medico decide cual de los dos resultados utilizar.</p>
+        <br>
+        <p>m+m/2 es simplemente el mantenimiento x 1.5.</p>
+
+    </div>
+    <script src="calcularHidratacion.js"></script>
+</body>
+</html>
